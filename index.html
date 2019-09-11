@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Giphy Api</title>
+</head>
+<body>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    var searchTerm = 'cat';
+    var url = `https://api.giphy.com/v1/gifs/search?q=${searchTerm}&api_key=Jb3ttdnYHru0VwVp3pTkk1thutShY83T&limit=10`;
+
+
+      $.ajax({
+        method: 'GET',
+        url: url,
+        
+      }).then(function(results){
+        console.log(results);
+        
+
+      });
+  </script>
+</body>
+</html>
