@@ -30,22 +30,31 @@
 
       //loop through topics to create buttons with id's and classes 
         
-      topics.forEach(function(t,index){
+      // topics.forEach(function(t,index){
           
-         var button = $('<button>');
-         button.html(t);
-         button.attr('id', "topic"+index);
-         button.attr('class', 'topic-btn');
-         button.attr('data-topic', t); 
-         button.appendTo("#topics");
+      //    var button = $('<button>');
+      //    button.html(t);
+      //    button.attr('id', "topic"+index);
+      //    button.attr('class', 'topic-btn');
+      //    button.attr('data-topic', t); 
+      //    button.appendTo("#topics");
         
-      });
-
+      // });
+        run();
       $('#input-btn').on("click",function(){ 
       
       var user =  $("#user-input").val();
       topics.push(user);
-      // $("#topics").empty();
+      $("#topics").empty();
+
+        run();
+
+      });
+
+
+      //function for creating topic buttons taking from the array of topics
+      function run(){
+    
       topics.forEach(function(t,index){
           
           var button = $('<button>');
@@ -56,11 +65,10 @@
           button.appendTo("#topics");
          
        });
-
-      });
+       
+      }
 
         //click a topic button to call giphy api to display images 
-      // $('.topic-btn').on('click', function(){
         $('#topics').on('click',"button" ,function(){
          var topic = $(this).data("topic");
         console.log('hello');
