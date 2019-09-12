@@ -10,19 +10,28 @@
     <div id="topics">
 
     </div>
+    <input id="user-input" type="text">
+    <button id="input-btn">Enter</button>
     <div id="images">
 
     </div>
+    
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script>
       
       var topics = ["corvette","lamborghini","ferrari", "porsche"];
       
+     
+      
+   $(document).ready(function () {
+     
+  
 
       //loop through topics to create buttons with id's and classes 
+        
       topics.forEach(function(t,index){
-
+          
          var button = $('<button>');
          button.html(t);
          button.attr('id', "topic"+index);
@@ -32,11 +41,29 @@
         
       });
 
-      var searchTerm = 'cat';
-    
+      $('#input-btn').on("click",function(){ 
       
-      $('.topic-btn').on('click', function(){
+      var user =  $("#user-input").val();
+      topics.push(user);
+      // $("#topics").empty();
+      topics.forEach(function(t,index){
+          
+          var button = $('<button>');
+          button.html(t);
+          button.attr('id', "topic"+index);
+          button.attr('class', 'topic-btn');
+          button.attr('data-topic', t); 
+          button.appendTo("#topics");
+         
+       });
+
+      });
+
+        //click a topic button to call giphy api to display images 
+      // $('.topic-btn').on('click', function(){
+        $('#topics').on('click',"button" ,function(){
          var topic = $(this).data("topic");
+        console.log('hello');
         
          var url = `https://api.giphy.com/v1/gifs/search?q=${topic}&api_key=Jb3ttdnYHru0VwVp3pTkk1thutShY83T&limit=10`;
 
@@ -45,42 +72,32 @@
           url: url,
           
           }).then(function(results){
-            console.log(results);
             
-            console.log(results.data[0].images.preview_gif);
-          
-          // img.attr('src', results.data[0].images.downsized_medium.url); 
-          // img.appendTo('#images')
+            console.log(results);
 
           results.data.forEach(function(r,index){
-            var img  = $('<img>');
+              var img  = $('<img>');
+              var p = $('<p>');
+                
                 img.attr('data-pic', index );
-            // r.data[0].images["480w_still"].url;
-            // r.images.downsized_medium.url;
+                p.html("rating: " + r.rating);
+                img.attr('src', r.images.fixed_height_still.url ); 
 
+                img.appendTo('#images');
+                p.appendTo('#images');
+                
 
-            //still image
-            r.images.fixed_height_still.url;
-            //moving gif 
-            r.images.fixed_height.url;
-
-            img.attr('src', r.images.fixed_height_still.url ); 
-            img.appendTo('#images');
-
-
+                //click image to make giph move or still 
             $('img').on('click', function(){
-              var picNum = $(this).data('pic');
-              var picAction = $(this).attr('src');
-
-              // var moving =  $(this).attr('src', results.data[picNum].images.fixed_height.url);
-              // var nonMoving = $(this).attr('src', results.data[picNum].images.fixed_height_still.url);
-              if(picAction === results.data[picNum].images.fixed_height.url){
-                $(this).attr('src', results.data[picNum].images.fixed_height_still.url); 
-              }else{
-                $(this).attr('src', results.data[picNum].images.fixed_height.url);
-              }
-              
-              
+                var picNum = $(this).data('pic');
+                var picAction = $(this).attr('src');
+                
+                if(picAction === results.data[picNum].images.fixed_height.url){
+                    $(this).attr('src', results.data[picNum].images.fixed_height_still.url); 
+                      }else{
+                    $(this).attr('src', results.data[picNum].images.fixed_height.url);
+                  }
+  
             });
         
 
@@ -91,7 +108,7 @@
 
       });
 
-    
+    });//end doc ready
   </script>
 </body>
 </html>
