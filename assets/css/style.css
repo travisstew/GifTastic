@@ -1,0 +1,64 @@
+*{
+  font-family: 'Luckiest Guy', cursive;
+}
+body{
+  background: black;
+ 
+}
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background: black;
+  width: 1100px;
+}
+.grid-item{
+  text-align: center;
+  color: white;
+  padding-bottom: 15px;
+  width: 400px;
+}
+#header{
+  text-align: center;
+  background: black;
+  height: 250px;
+  
+}
+#topics{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.topic-btn{
+  padding: 5px;
+  font-size: 15px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+#input-btn{
+  padding: 5px;
+  font-size: 15px;
+  border-radius: 10px;
+}
+#user-input{
+  padding: 4px;
+  padding-left: 60px;
+  
+}
+h1{
+
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: white;
+  font-size: 50px;
+  padding-bottom: 20px;
+  font-family: 'Luckiest Guy', cursive;
+}
+#input{
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+img{
+  border: solid thin white;
+}
+p{
+  font-family: 'Luckiest Guy', cursive;
+}
