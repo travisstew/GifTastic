@@ -97,21 +97,11 @@
              
              }).then(function(r){
 
-                console.log(r.data);
-             console.log($("[data-pic-number=" + picSelect + "]"));
-           
-               
-                
                 if(picAction === r.data[picNum].images.fixed_height.url){
-                  console.log('if');     
-                  $(this).attr('src',r.data[picNum].images.fixed_height_still.url);
+               
                   $("[data-pic-number=" + picSelect + "]").attr('src',r.data[picNum].images.fixed_height_still.url);
                 }else{
-                  console.log('else');
-                  console.log( $(this).attr('src'));
-                  
-                  $(this).attr('src',r.data[picNum].images.fixed_height.url );
-                  $("[data-pic-number=" + picSelect + "]").attr('src',r.data[picNum].images.fixed_height.url);
+                   $("[data-pic-number=" + picSelect + "]").attr('src',r.data[picNum].images.fixed_height.url);
                 }
     
 
