@@ -96,7 +96,6 @@
              url: url,
              
              }).then(function(r){
-
                 if(picAction === r.data[picNum].images.fixed_height.url){
                
                   $("[data-pic-number=" + picSelect + "]").attr('src',r.data[picNum].images.fixed_height_still.url);
