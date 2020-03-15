@@ -58,7 +58,53 @@ h1{
 }
 img{
   border: solid thin white;
+  min-width: unset;
 }
 p{
   font-family: 'Luckiest Guy', cursive;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 840px){
+  
+  .grid-container{
+    display: grid;
+    grid-template-columns: auto ;
+    background: black;
+    width: 0px;
+    inline-size: auto;
+  }
+
+  .grid-item {
+    text-align: center;
+    color: white;
+    padding-bottom: 15px;
+    width: 42rem;
+}
+
+}
+
+@media only screen and (min-width: 320px) and (max-width: 420px){
+  .grid-container{
+    display: grid;
+    grid-template-columns: auto ;
+    background: black;
+    width: auto;
+    inline-size: auto;
+    padding-top: 3rem;
+
+  }
+
+  .grid-item {
+    text-align: center;
+    color: white;
+    padding-bottom: 15px;
+    width:  auto;
+}
+  #topics {
+    padding-top: 1rem;
+  }
+  img{
+    max-width: 300px;
+  }
+  
 }
