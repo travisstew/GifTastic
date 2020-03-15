@@ -6,12 +6,13 @@ $(document).ready(function () {
     
           addBtn();
           $('#input-btn').on("click",function(){ 
-          var user =  $("#user-input").val();
-          topics.push(user);
-          $("#topics").empty();
-            addBtn();
-            var clear = document.querySelector("#user-input");
-            clear.value = "";
+              $('.grid-container').empty(); 
+              var user =  $("#user-input").val();
+              topics.push(user);
+              $("#topics").empty();
+              addBtn();
+              var clear = document.querySelector("#user-input");
+              clear.value = "";
 
           });
     
@@ -34,6 +35,7 @@ $(document).ready(function () {
       
             //click a topic button to call giphy api to display images 
             $('#topics').on('click',"button" ,function(){
+              $('.grid-container').empty(); 
               var topic = $(this).data("topic");
               var url = `https://api.giphy.com/v1/gifs/search?q=${topic}&api_key=Jb3ttdnYHru0VwVp3pTkk1thutShY83T&limit=10`;
     
