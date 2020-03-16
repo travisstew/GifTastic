@@ -2,7 +2,7 @@
 ## Giphy Api 
 
 ## Summary 
- GIPHY API to make a dynamic web page that populates with gifs of your choice. jquery and JavaScript is used to change the HTML of the site.
+ GIPHY API to make a dynamic web page that populates with gifs of your choice. Jquery and JavaScript is used to change the HTML of the site.
  
 ## License 
 
