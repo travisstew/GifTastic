@@ -4,7 +4,7 @@
 ## Summary 
  GIPHY API to make a dynamic web page that populates with gifs of your choice. Jquery and JavaScript is used to change the HTML of the site.
  
- ![alt text](assets/images/giphygif.webm)
+ ![alt text](assets/images/giphygif.gif)
 ## License 
 
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
