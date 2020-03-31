@@ -3,7 +3,9 @@
 
 ## Summary 
  GIPHY API to make a dynamic web page that populates with gifs of your choice. Jquery and JavaScript is used to change the HTML of the site.
- 
+
+- Preview https://gracious-goldwasser-b7f6bf.netlify.com 
+
  ![alt text](assets/images/giphygif.gif)
 
 ## Installation 
